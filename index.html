@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>México de Oro - Portal Oficial & Documentación</title>
+  <style>
+    
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-dark: #0b0b0e;
+  --bg-card: #141419;
+  --bg-card-hover: #1c1c24;
+  --gold-primary: #d4af37;
+  --gold-light: #f3e5ab;
+  --gold-dark: #997a15;
+  --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+  --gold-text-gradient: linear-gradient(135deg, #e6ca65 0%, #ffffff 50%, #b8860b 100%);
+  --text-main: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --border-gold: rgba(212, 175, 55, 0.22);
+  --border-gold-bright: rgba(212, 175, 55, 0.6);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.7;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(184, 134, 11, 0.04) 0%, transparent 40%);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header & Nav */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11, 11, 14, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-gold);
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  color: #000;
+  font-size: 20px;
+}
+
+.brand-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  background: var(--gold-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+nav a:hover, nav a.active {
+  color: var(--gold-primary);
+}
+
+/* Hero Section */
+.hero {
+  padding: 90px 0 60px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  background: var(--gold-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: var(--gold-gradient);
+  color: #0b0b0e;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-gold);
+}
+
+.btn-outline:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+/* Card Sections */
+.section {
+  padding: 40px 0 80px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 40px;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.75rem;
+  color: var(--gold-primary);
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-gold);
+  padding-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-content h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-light);
+  font-size: 1.2rem;
+  margin: 24px 0 12px;
+}
+
+.card-content p, .card-content ul {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  font-size: 0.98rem;
+}
+
+.card-content ul {
+  padding-left: 20px;
+}
+
+.card-content li {
+  margin-bottom: 8px;
+}
+
+/* Helper Box for TikTok Developer */
+.tiktok-helper {
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(20, 20, 25, 1) 100%);
+  border: 1px solid var(--border-gold-bright);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  margin: 40px 0;
+}
+
+.tiktok-helper h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-primary);
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+}
+
+.url-box {
+  background: #08080a;
+  border: 1px solid var(--border-gold);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+  color: var(--gold-light);
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  word-break: break-all;
+}
+
+.copy-badge {
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--gold-primary);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border-gold);
+  padding: 40px 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  background: #08080a;
+}
+
+footer a {
+  color: var(--gold-primary);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .nav-wrapper { flex-direction: column; height: auto; padding: 16px 0; gap: 16px; }
+  .card { padding: 24px; }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">M</div>
+        <span class="brand-title">México de Oro</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="terms.html">Términos de Servicio</a></li>
+          <li><a href="privacy.html">Política de Privacidad</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-badge">Plataforma Digital & Automatización</div>
+      <h1>México de Oro</h1>
+      <p>Difusión cultural, noticias e identidad mexicana a través de innovación tecnológica y gestión automatizada de contenidos multimedia.</p>
+      <div class="btn-group">
+        <a href="terms.html" class="btn btn-primary">Términos de Servicio</a>
+        <a href="privacy.html" class="btn btn-outline">Política de Privacidad</a>
+      </div>
+    </section>
+
+    <!-- TikTok Helper Block -->
+    <div class="tiktok-helper">
+      <h3>Enrutamiento Oficial para TikTok Developer Portal</h3>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">
+        Utiliza estas URLs exactas para completar los campos requeridos en la configuración de tu aplicación en TikTok for Developers:
+      </p>
+      
+      <label style="font-size: 0.85rem; color: var(--gold-light); display: block; margin-bottom: 4px; font-weight: 600;">TERMS OF SERVICE URL:</label>
+      <div class="url-box">
+        <span id="terms-url">https://tu-usuario.github.io/tu-repositorio/terms.html</span>
+        <span class="copy-badge">Para TikTok</span>
+      </div>
+
+      <label style="font-size: 0.85rem; color: var(--gold-light); display: block; margin-bottom: 4px; font-weight: 600; margin-top: 16px;">PRIVACY POLICY URL:</label>
+      <div class="url-box">
+        <span id="privacy-url">https://tu-usuario.github.io/tu-repositorio/privacy.html</span>
+        <span class="copy-badge">Para TikTok</span>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="card">
+        <h2 class="card-title">Sobre la Aplicación</h2>
+        <div class="card-content">
+          <p>
+            <strong>México de Oro</strong> es un proyecto digital enfocado en la creación, curaduría y distribución de contenido informativo, cultural y de orgullo nacional mexicano.
+          </p>
+          <p>
+            Nuestra infraestructura integra herramientas de automatización de flujos de trabajo (como n8n y conectores oficiales de API) para procesar, programar y publicar clips de video de alta calidad en plataformas sociales de manera eficiente y segura.
+          </p>
+          
+          <h3>Especificaciones Técnicas e Integración API</h3>
+          <ul>
+            <li><strong>Gestión de Contenidos:</strong> Procesamiento de video en formato vertical optimizado para consumo móvil.</li>
+            <li><strong>Integración OAuth 2.0:</strong> Autenticación segura y directa a través del flujo oficial de TikTok Developer API.</li>
+            <li><strong>Seguridad de Datos:</strong> Cumplimiento estricto de las directivas de protección de datos personales y privacidad de los usuarios.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="terms.html">Términos de Servicio</a>
+        <a href="privacy.html">Política de Privacidad</a>
+      </div>
+      <p>&copy; 2026 México de Oro. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Auto detect GitHub Pages URL
+    window.addEventListener('DOMContentLoaded', () => {
+      const loc = window.location.href.replace('index.html', '');
+      document.getElementById('terms-url').textContent = loc + 'terms.html';
+      document.getElementById('privacy-url').textContent = loc + 'privacy.html';
+    });
+  </script>
+</body>
+</html>
