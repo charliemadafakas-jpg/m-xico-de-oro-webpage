@@ -3,341 +3,219 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>México de Oro - Portal Oficial & Documentación</title>
+  <title>México de Oro | Portal oficial y documentación</title>
+  <meta name="description" content="México de Oro: difusión cultural, noticias e identidad mexicana con gestión automatizada de contenidos en video.">
+  <link rel="icon" type="image/png" href="mexicodeoro.png">
+  <link rel="apple-touch-icon" href="mexicodeoro.png">
+  <meta property="og:title" content="México de Oro">
+  <meta property="og:description" content="Cultura, noticias e identidad mexicana en video vertical.">
+  <meta property="og:image" content="mexicodeoro.png">
   <style>
-    
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg-dark: #0b0b0e;
-  --bg-card: #141419;
-  --bg-card-hover: #1c1c24;
-  --gold-primary: #d4af37;
+  --bg: #0e0b07;
+  --bg-deep: #080604;
+  --panel: #17130c;
+  --gold: #d4af37;
   --gold-light: #f3e5ab;
-  --gold-dark: #997a15;
-  --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-  --gold-text-gradient: linear-gradient(135deg, #e6ca65 0%, #ffffff 50%, #b8860b 100%);
-  --text-main: #f4f4f5;
-  --text-muted: #a1a1aa;
-  --border-gold: rgba(212, 175, 55, 0.22);
-  --border-gold-bright: rgba(212, 175, 55, 0.6);
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  --gold-dark: #8f7013;
+  --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 28%, #b38728 52%, #fbf5b7 76%, #aa771c 100%);
+  --text: #f4efe4;
+  --muted: #b3aa98;
+  --line: rgba(212, 175, 55, 0.24);
+  --line-strong: rgba(212, 175, 55, 0.6);
+  --serif: 'Cinzel', 'Times New Roman', serif;
+  --sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: var(--bg-dark);
-  color: var(--text-main);
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.7;
   overflow-x: hidden;
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(184, 134, 11, 0.04) 0%, transparent 40%);
+  background-image:
+    radial-gradient(ellipse 70% 50% at 75% 0%, rgba(212, 175, 55, 0.12), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 0% 60%, rgba(143, 112, 19, 0.08), transparent 70%);
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px;
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 3px;
 }
 
-/* Header & Nav */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+/* ---------- Header ---------- */
 header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(11, 11, 14, 0.85);
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(14, 11, 7, 0.88);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-gold);
+  border-bottom: 1px solid var(--line);
 }
-
-.nav-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
+.nav-wrapper { display: flex; justify-content: space-between; align-items: center; min-height: 76px; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.brand img { width: 50px; height: 50px; display: block; border: 1px solid var(--line-strong); }
+.brand span {
+  font-family: var(--serif); font-weight: 700; font-size: 1.1rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold-light);
 }
-
-.brand-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-}
-
-.brand-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--gold-gradient);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-  font-family: 'Cinzel', serif;
-  font-weight: 900;
-  color: #000;
-  font-size: 20px;
-}
-
-.brand-title {
-  font-family: 'Cinzel', serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  background: var(--gold-text-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-transform: uppercase;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 28px;
-}
-
+nav ul { display: flex; list-style: none; gap: 28px; }
 nav a {
-  color: var(--text-muted);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: all 0.25s ease;
+  color: var(--muted); text-decoration: none; font-weight: 500; font-size: 0.93rem;
+  padding: 6px 0; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s;
 }
+nav a:hover, nav a.active { color: var(--gold); border-bottom-color: var(--gold); }
 
-nav a:hover, nav a.active {
-  color: var(--gold-primary);
-}
-
-/* Hero Section */
+/* ---------- Hero ---------- */
 .hero {
-  padding: 90px 0 60px;
-  text-align: center;
-  position: relative;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center;
+  padding: 80px 0 72px;
 }
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  border-radius: 50px;
-  background: rgba(212, 175, 55, 0.1);
-  border: 1px solid var(--border-gold);
-  color: var(--gold-light);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-}
-
 .hero h1 {
-  font-family: 'Cinzel', serif;
-  font-size: 3rem;
-  font-weight: 900;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  background: var(--gold-text-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-family: var(--serif); font-weight: 900; font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+  line-height: 1.12; letter-spacing: 0.02em; margin-bottom: 22px;
+  background: var(--gold-gradient); -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: var(--gold);
 }
+.hero p { color: var(--muted); font-size: 1.12rem; max-width: 52ch; margin-bottom: 34px; }
 
-.hero p {
-  font-size: 1.15rem;
-  color: var(--text-muted);
-  max-width: 680px;
-  margin: 0 auto 36px;
-}
-
-.btn-group {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
+.btn-group { display: flex; gap: 14px; flex-wrap: wrap; }
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 28px;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 0.95rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 14px 26px; border-radius: 6px; font-weight: 600; font-size: 0.95rem;
+  text-decoration: none; transition: transform .25s, box-shadow .25s, border-color .25s, color .25s;
 }
+.btn-primary { background: var(--gold-gradient); color: #120e05; box-shadow: 0 6px 24px rgba(212, 175, 55, 0.25); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); }
+.btn-outline { color: var(--text); border: 1px solid var(--line-strong); }
+.btn-outline:hover { color: var(--gold); border-color: var(--gold); }
 
-.btn-primary {
+/* The one memorable element: the logo, shown untouched in a gilded frame */
+.logo-stage { position: relative; justify-self: center; width: min(100%, 440px); }
+.logo-stage::before {
+  content: ""; position: absolute; inset: -28px; z-index: 0;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.28), transparent 68%);
+  filter: blur(18px);
+}
+.logo-frame {
+  position: relative; z-index: 1; padding: 10px;
   background: var(--gold-gradient);
-  color: #0b0b0e;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
-  border: none;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.65);
+  overflow: hidden;
 }
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+.logo-frame img { display: block; width: 100%; height: auto; }
+.logo-frame::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, transparent 38%, rgba(255, 246, 200, 0.35) 50%, transparent 62%);
+  transform: translateX(-120%);
+  animation: sheen 2.2s 0.6s ease-out 1 forwards;
 }
+@keyframes sheen { to { transform: translateX(120%); } }
 
-.btn-outline {
-  background: transparent;
-  color: var(--text-main);
-  border: 1px solid var(--border-gold);
+/* ---------- Sections ---------- */
+.section { padding: 72px 0; border-top: 1px solid var(--line); }
+.section-title {
+  font-family: var(--serif); font-weight: 700; font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--gold); letter-spacing: 0.03em; margin-bottom: 14px;
 }
+.section-lead { color: var(--muted); max-width: 62ch; margin-bottom: 44px; }
 
-.btn-outline:hover {
-  border-color: var(--gold-primary);
-  color: var(--gold-primary);
-  background: rgba(212, 175, 55, 0.05);
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); }
+.pillar { padding: 0 32px; border-left: 1px solid var(--line); }
+.pillar:first-child { padding-left: 0; border-left: 0; }
+.pillar:last-child { padding-right: 0; }
+.pillar h3 { font-family: var(--serif); font-size: 1.12rem; color: var(--gold-light); margin-bottom: 10px; }
+.pillar p { color: var(--muted); font-size: 0.97rem; }
+
+.steps { list-style: none; counter-reset: step; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.steps li { counter-increment: step; position: relative; padding-top: 58px; }
+.steps li::before {
+  content: counter(step); position: absolute; top: 0; left: 0;
+  width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%;
+  font-family: var(--serif); font-weight: 700; color: #120e05; background: var(--gold-gradient);
 }
-
-/* Card Sections */
-.section {
-  padding: 40px 0 80px;
+.steps li::after {
+  content: ""; position: absolute; top: 21px; left: 54px; right: -12px; height: 1px;
+  background: linear-gradient(90deg, var(--line-strong), transparent);
 }
+.steps li:last-child::after { display: none; }
+.steps h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+.steps p { color: var(--muted); font-size: 0.93rem; }
 
-.card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-gold);
-  border-radius: var(--radius-md);
-  padding: 40px;
-  margin-bottom: 32px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.card-title {
-  font-family: 'Cinzel', serif;
-  font-size: 1.75rem;
-  color: var(--gold-primary);
-  margin-bottom: 24px;
-  border-bottom: 1px solid var(--border-gold);
-  padding-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.card-content h3 {
-  font-family: 'Cinzel', serif;
-  color: var(--gold-light);
-  font-size: 1.2rem;
-  margin: 24px 0 12px;
-}
-
-.card-content p, .card-content ul {
-  color: var(--text-muted);
-  margin-bottom: 16px;
-  font-size: 0.98rem;
-}
-
-.card-content ul {
-  padding-left: 20px;
-}
-
-.card-content li {
-  margin-bottom: 8px;
-}
-
-/* Helper Box for TikTok Developer */
+/* ---------- TikTok helper ---------- */
 .tiktok-helper {
-  background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(20, 20, 25, 1) 100%);
-  border: 1px solid var(--border-gold-bright);
-  border-radius: var(--radius-md);
-  padding: 30px;
-  margin: 40px 0;
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.09), var(--panel) 70%);
+  border: 1px solid var(--line-strong); border-radius: 14px; padding: 36px;
 }
-
-.tiktok-helper h3 {
-  font-family: 'Cinzel', serif;
-  color: var(--gold-primary);
-  font-size: 1.3rem;
-  margin-bottom: 16px;
-}
-
+.tiktok-helper h2 { font-family: var(--serif); font-size: 1.4rem; color: var(--gold); margin-bottom: 8px; }
+.tiktok-helper > p { color: var(--muted); margin-bottom: 26px; }
+.url-label { display: block; font-size: 0.88rem; font-weight: 600; color: var(--gold-light); margin: 18px 0 6px; }
+.url-row { display: flex; gap: 10px; align-items: stretch; }
 .url-box {
-  background: #08080a;
-  border: 1px solid var(--border-gold);
-  padding: 12px 16px;
-  border-radius: var(--radius-sm);
-  font-family: monospace;
-  color: var(--gold-light);
-  font-size: 0.9rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-  word-break: break-all;
+  flex: 1; min-width: 0; background: var(--bg-deep); border: 1px solid var(--line);
+  border-radius: 8px; padding: 12px 16px; font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-size: 0.9rem; color: var(--gold-light); word-break: break-all;
 }
-
-.copy-badge {
-  background: rgba(212, 175, 55, 0.2);
-  color: var(--gold-primary);
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-left: 10px;
-  flex-shrink: 0;
+.copy-btn {
+  flex-shrink: 0; cursor: pointer; border: 1px solid var(--line-strong); background: rgba(212, 175, 55, 0.12);
+  color: var(--gold-light); font: 600 0.88rem var(--sans); padding: 0 20px; border-radius: 8px;
+  transition: background .2s, color .2s;
 }
+.copy-btn:hover { background: rgba(212, 175, 55, 0.25); }
+.copy-btn.done { background: var(--gold); color: #120e05; }
 
-/* Footer */
-footer {
-  border-top: 1px solid var(--border-gold);
-  padding: 40px 0;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  background: #08080a;
+/* ---------- Footer ---------- */
+footer { border-top: 1px solid var(--line); background: var(--bg-deep); padding: 44px 0; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+.footer-brand { display: flex; align-items: center; gap: 16px; }
+.footer-brand img { width: 72px; height: 72px; display: block; border: 1px solid var(--line-strong); }
+.footer-brand p { color: var(--muted); font-size: 0.9rem; }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { color: var(--gold); text-decoration: none; font-size: 0.93rem; }
+.footer-links a:hover { text-decoration: underline; }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 44px; padding: 52px 0; text-align: center; }
+  .hero p { margin-left: auto; margin-right: auto; }
+  .btn-group { justify-content: center; }
+  .pillars { grid-template-columns: 1fr; gap: 28px; }
+  .pillar, .pillar:first-child, .pillar:last-child { padding: 0 0 0 20px; border-left: 1px solid var(--line-strong); }
+  .steps { grid-template-columns: 1fr 1fr; row-gap: 36px; }
+  .steps li::after { display: none; }
 }
-
-footer a {
-  color: var(--gold-primary);
-  text-decoration: none;
+@media (max-width: 600px) {
+  .nav-wrapper { flex-direction: column; padding: 14px 0; }
+  nav ul { gap: 18px; flex-wrap: wrap; justify-content: center; }
+  .steps { grid-template-columns: 1fr; }
+  .tiktok-helper { padding: 24px; }
+  .url-row { flex-direction: column; }
+  .copy-btn { padding: 12px; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-brand { flex-direction: column; }
 }
-
-footer a:hover {
-  text-decoration: underline;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .logo-frame::after { animation: none; display: none; }
+  .btn, .copy-btn { transition: none; }
 }
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-bottom: 16px;
-}
-
-@media (max-width: 768px) {
-  .hero h1 { font-size: 2.2rem; }
-  .nav-wrapper { flex-direction: column; height: auto; padding: 16px 0; gap: 16px; }
-  .card { padding: 24px; }
-}
-
   </style>
 </head>
 <body>
 
   <header>
     <div class="container nav-wrapper">
-      <a href="index.html" class="brand-logo">
-        <div class="brand-icon">M</div>
-        <span class="brand-title">México de Oro</span>
+      <a href="index.html" class="brand" aria-label="México de Oro, inicio">
+        <img src="mexicodeoro.png" alt="Logotipo de México de Oro" width="50" height="50">
+        <span>México de Oro</span>
       </a>
-      <nav>
+      <nav aria-label="Principal">
         <ul>
-          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>
           <li><a href="terms.html">Términos de Servicio</a></li>
           <li><a href="privacy.html">Política de Privacidad</a></li>
         </ul>
@@ -347,74 +225,116 @@ footer a:hover {
 
   <main class="container">
     <section class="hero">
-      <div class="hero-badge">Plataforma Digital & Automatización</div>
-      <h1>México de Oro</h1>
-      <p>Difusión cultural, noticias e identidad mexicana a través de innovación tecnológica y gestión automatizada de contenidos multimedia.</p>
-      <div class="btn-group">
-        <a href="terms.html" class="btn btn-primary">Términos de Servicio</a>
-        <a href="privacy.html" class="btn btn-outline">Política de Privacidad</a>
+      <div>
+        <h1>Orgullo mexicano, contado en video</h1>
+        <p>Difusión cultural, noticias e identidad mexicana a través de innovación tecnológica y gestión automatizada de contenidos multimedia.</p>
+        <div class="btn-group">
+          <a href="terms.html" class="btn btn-primary">Términos de Servicio</a>
+          <a href="privacy.html" class="btn btn-outline">Política de Privacidad</a>
+        </div>
+      </div>
+      <div class="logo-stage">
+        <div class="logo-frame">
+          <img src="mexicodeoro.png" alt="Logotipo de México de Oro: águila dorada sobre un círculo con ramas de laurel" width="1024" height="1024">
+        </div>
       </div>
     </section>
 
-    <!-- TikTok Helper Block -->
-    <div class="tiktok-helper">
-      <h3>Enrutamiento Oficial para TikTok Developer Portal</h3>
-      <p style="color: var(--text-muted); margin-bottom: 20px;">
-        Utiliza estas URLs exactas para completar los campos requeridos en la configuración de tu aplicación en TikTok for Developers:
+    <section class="section" id="sobre">
+      <h2 class="section-title">Sobre la aplicación</h2>
+      <p class="section-lead">
+        México de Oro es un proyecto digital que crea, selecciona y distribuye contenido informativo, cultural y de orgullo nacional mexicano.
       </p>
-      
-      <label style="font-size: 0.85rem; color: var(--gold-light); display: block; margin-bottom: 4px; font-weight: 600;">TERMS OF SERVICE URL:</label>
-      <div class="url-box">
-        <span id="terms-url">https://tu-usuario.github.io/tu-repositorio/terms.html</span>
-        <span class="copy-badge">Para TikTok</span>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Gestión de contenidos</h3>
+          <p>Procesamos video en formato vertical, optimizado para verse en el celular.</p>
+        </div>
+        <div class="pillar">
+          <h3>Integración OAuth 2.0</h3>
+          <p>La autenticación es segura y directa, mediante el flujo oficial de TikTok Developer API.</p>
+        </div>
+        <div class="pillar">
+          <h3>Seguridad de datos</h3>
+          <p>Cumplimos de forma estricta con las directivas de protección de datos personales y privacidad de los usuarios.</p>
+        </div>
       </div>
+    </section>
 
-      <label style="font-size: 0.85rem; color: var(--gold-light); display: block; margin-bottom: 4px; font-weight: 600; margin-top: 16px;">PRIVACY POLICY URL:</label>
-      <div class="url-box">
-        <span id="privacy-url">https://tu-usuario.github.io/tu-repositorio/privacy.html</span>
-        <span class="copy-badge">Para TikTok</span>
-      </div>
-    </div>
+    <section class="section" id="flujo">
+      <h2 class="section-title">Cómo publicamos</h2>
+      <p class="section-lead">
+        Herramientas de automatización, como n8n y conectores oficiales de API, nos permiten procesar, programar y publicar clips de alta calidad de forma eficiente y segura.
+      </p>
+      <ol class="steps">
+        <li><h3>Selección</h3><p>Elegimos el contenido informativo y cultural que vale la pena difundir.</p></li>
+        <li><h3>Procesamiento</h3><p>Preparamos cada clip en formato vertical y alta calidad.</p></li>
+        <li><h3>Programación</h3><p>Los flujos automatizados agendan cada publicación.</p></li>
+        <li><h3>Publicación</h3><p>Publicamos mediante la API oficial, con autorización OAuth 2.0.</p></li>
+      </ol>
+    </section>
 
-    <section class="section">
-      <div class="card">
-        <h2 class="card-title">Sobre la Aplicación</h2>
-        <div class="card-content">
-          <p>
-            <strong>México de Oro</strong> es un proyecto digital enfocado en la creación, curaduría y distribución de contenido informativo, cultural y de orgullo nacional mexicano.
-          </p>
-          <p>
-            Nuestra infraestructura integra herramientas de automatización de flujos de trabajo (como n8n y conectores oficiales de API) para procesar, programar y publicar clips de video de alta calidad en plataformas sociales de manera eficiente y segura.
-          </p>
-          
-          <h3>Especificaciones Técnicas e Integración API</h3>
-          <ul>
-            <li><strong>Gestión de Contenidos:</strong> Procesamiento de video en formato vertical optimizado para consumo móvil.</li>
-            <li><strong>Integración OAuth 2.0:</strong> Autenticación segura y directa a través del flujo oficial de TikTok Developer API.</li>
-            <li><strong>Seguridad de Datos:</strong> Cumplimiento estricto de las directivas de protección de datos personales y privacidad de los usuarios.</li>
-          </ul>
+    <section class="section" id="tiktok">
+      <div class="tiktok-helper">
+        <h2>Enlaces oficiales para TikTok Developer Portal</h2>
+        <p>Copia estas URLs en los campos correspondientes de la configuración de tu aplicación en TikTok for Developers.</p>
+
+        <span class="url-label">URL de los Términos de Servicio</span>
+        <div class="url-row">
+          <div class="url-box" id="terms-url">https://tu-usuario.github.io/tu-repositorio/terms.html</div>
+          <button class="copy-btn" type="button" data-target="terms-url">Copiar</button>
+        </div>
+
+        <span class="url-label">URL de la Política de Privacidad</span>
+        <div class="url-row">
+          <div class="url-box" id="privacy-url">https://tu-usuario.github.io/tu-repositorio/privacy.html</div>
+          <button class="copy-btn" type="button" data-target="privacy-url">Copiar</button>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <div class="footer-links">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="mexicodeoro.png" alt="Logotipo de México de Oro" width="72" height="72">
+        <p>&copy; 2026 México de Oro.<br>Todos los derechos reservados.</p>
+      </div>
+      <nav class="footer-links" aria-label="Pie de página">
         <a href="index.html">Inicio</a>
         <a href="terms.html">Términos de Servicio</a>
         <a href="privacy.html">Política de Privacidad</a>
-      </div>
-      <p>&copy; 2026 México de Oro. Todos los derechos reservados.</p>
+      </nav>
     </div>
   </footer>
 
   <script>
-    // Auto detect GitHub Pages URL
-    window.addEventListener('DOMContentLoaded', () => {
-      const loc = window.location.href.replace('index.html', '');
-      document.getElementById('terms-url').textContent = loc + 'terms.html';
-      document.getElementById('privacy-url').textContent = loc + 'privacy.html';
+    // Detecta automáticamente la URL base (GitHub Pages u otro hosting)
+    window.addEventListener('DOMContentLoaded', function () {
+      var base = new URL('./', window.location.href).href;
+      if (window.location.protocol === 'file:') return; // en local se dejan los ejemplos
+      document.getElementById('terms-url').textContent = base + 'terms.html';
+      document.getElementById('privacy-url').textContent = base + 'privacy.html';
+    });
+
+    // Botones de copiar
+    document.querySelectorAll('.copy-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var text = document.getElementById(btn.dataset.target).textContent.trim();
+        var done = function () {
+          btn.textContent = 'Copiado';
+          btn.classList.add('done');
+          setTimeout(function () { btn.textContent = 'Copiar'; btn.classList.remove('done'); }, 1800);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(function () {});
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); done(); } catch (e) {}
+          document.body.removeChild(ta);
+        }
+      });
     });
   </script>
 </body>
